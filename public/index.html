@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#1a0533" />
+  <title>Last Laugh</title>
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    body { min-height: 100dvh; }
+    #app { max-width: 480px; margin: 0 auto; padding: 16px 16px 40px; min-height: 100dvh; display: flex; flex-direction: column; }
+    .top { display: flex; justify-content: space-between; align-items: center; min-height: 48px; margin-bottom: 12px; }
+    .me { display: flex; align-items: center; gap: 8px; font-weight: 900; padding: 6px 14px 6px 6px; border-radius: 99px; color: var(--cardInk); font-size: 1rem; }
+    .me .dot { width: 26px; height: 26px; border-radius: 50%; background: #00000025; display: grid; place-items: center; font-size: .8rem; }
+    .top .t { font-family: var(--display); font-size: 1.4rem; color: var(--yellow); }
+    .screen { flex: 1; display: flex; flex-direction: column; gap: 14px; }
+    .center { justify-content: center; align-items: center; text-align: center; }
+    .logo { font-size: 3.6rem; margin: 30px 0 30px; }
+    label { font-weight: 900; font-size: .9rem; color: var(--muted); letter-spacing: .08em; }
+    input, textarea {
+      width: 100%; font: inherit; font-weight: 700; font-size: 1.4rem; padding: 14px 16px;
+      border-radius: 14px; border: 3px solid transparent; background: #fff; color: var(--cardInk); outline: none;
+    }
+    input:focus, textarea:focus { border-color: var(--yellow); }
+    #code { text-transform: uppercase; letter-spacing: .3em; font-family: var(--display); }
+    #name { text-transform: uppercase; }
+    textarea { resize: none; height: 110px; }
+    .err { color: #ff7a9e; font-weight: 900; min-height: 1.2em; }
+    .big { font-family: var(--display); font-size: 2rem; line-height: 1.1; }
+    .muted { color: var(--muted); font-size: 1.05rem; }
+    .promptbox { background: #ffffff12; border-radius: 18px; padding: 18px; font-weight: 900; font-size: 1.35rem; line-height: 1.25; }
+    .promptbox small { display: block; color: var(--yellow); font-size: .8rem; letter-spacing: .1em; margin-bottom: 6px; }
+    .choice { background: #fff; color: var(--cardInk); border: none; border-radius: 18px; padding: 22px 18px; font-size: 1.3rem; font-weight: 900; text-align: left; box-shadow: 0 6px 0 #00000055; transition: transform .1s; }
+    .choice:active { transform: translateY(4px); box-shadow: 0 2px 0 #00000055; }
+    .choice.picked { background: var(--yellow); }
+    .row2 { display: flex; gap: 10px; }
+    .row2 .btn { flex: 1; }
+    .counter { text-align: right; font-size: .85rem; color: var(--muted); margin-top: -8px; }
+    .emoji { font-size: 4.5rem; animation: float 2s infinite; }
+    .timerSmall { font-family: var(--display); font-size: 1.3rem; padding: 4px 12px; border-radius: 99px; background: #ffffff15; }
+    .timerSmall.urgent { background: var(--pink); }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="top">
+      <div id="meTag"></div>
+      <div id="timer"></div>
+    </div>
+    <div id="screen" class="screen"></div>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/play.js"></script>
+</body>
+</html>

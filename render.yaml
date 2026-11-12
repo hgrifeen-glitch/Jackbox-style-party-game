@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: last-laugh
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
