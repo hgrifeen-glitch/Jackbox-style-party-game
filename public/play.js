@@ -36,7 +36,8 @@ function showJoin(err = '') {
     <input id="name" maxlength="12" autocomplete="off" placeholder="ENTER NAME" value="${esc(localStorage.getItem('ll-name') || '')}" />
     <div class="err">${esc(err)}</div>
     <button class="btn pink" id="joinBtn">Play</button>
-    <p class="muted" style="text-align:center">Game already started or full? You'll join as the audience and can still vote.</p>`;
+    <p class="muted" style="text-align:center">Game already started or full? You'll join as the audience and can still vote.</p>
+    <a href="/host" class="btn ghost" style="text-align:center;text-decoration:none;margin-top:24px">📺 Host a game on this screen</a>`;
   const go = () => join($('#code').value, $('#name').value);
   $('#joinBtn').onclick = go;
   $('#name').onkeydown = (e) => e.key === 'Enter' && go();
