@@ -40,7 +40,7 @@ function showJoin(err = '') {
     <a href="/host" class="btn ghost" style="text-align:center;text-decoration:none;margin-top:24px">📺 Host a game on this screen</a>`;
   const go = () => join($('#code').value, $('#name').value);
   $('#joinBtn').onclick = go;
-  $('#name').onkeydown = (e) => e.key === 'Enter' && go();
+  $('#name').onkeydown = (e) => { if (e.key === 'Enter') go(); };
   if (!code) $('#code').focus();
 }
 
