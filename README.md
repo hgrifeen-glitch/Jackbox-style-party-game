@@ -1,6 +1,6 @@
 # LAST LAUGH 🎤
 
-A phone-controlled party game for 3–8 players, plus unlimited audience voters.
+A phone-controlled party game for 3–10 players, plus unlimited audience voters.
 
 ## Setup (one time)
 Install Node.js from https://nodejs.org, then in this folder run:
@@ -17,7 +17,7 @@ Install Node.js from https://nodejs.org, then in this folder run:
 ## How it plays
 - **Rounds 1 & 2:** each player gets 2 prompts, and each prompt is shared with one other player. Everyone else votes on the two answers. Round 2 is worth double points. If everyone votes for one answer, that's a SWEEP bonus.
 - **Final round (The Last Laugh):** everyone answers the same prompt, then everyone votes for their favorite.
-- People who join after the game starts (or once there are 8 players) become the audience and can still vote.
+- People who join after the game starts (or once there are 10 players) become the audience and can still vote.
 - 🛟 **Safety** fills in a random answer if you've got nothing.
 
 ## Customize

@@ -68,6 +68,16 @@
     .grid .answer { font-size: 1.6em; min-height: 3.6em; transform: none !important; }
     .grid .answer .tag { position: absolute; top: .4em; left: .6em; font-family: var(--display); font-size: .6em; color: var(--pink); }
 
+    /* compact layout for big groups (7+ players) */
+    main.many .grid { grid-template-columns: repeat(5, 1fr); gap: .8em; }
+    main.many .grid .answer { font-size: 1.1em; min-height: 3.2em; padding: 1em .8em; }
+    main.many .board { gap: .3em; }
+    main.many .row { font-size: 1.1em; }
+    main.many .row .bar { height: 1.9em; }
+    main.many .board-title { font-size: 3em !important; margin-bottom: .4em !important; }
+    main.many #endBoard { margin-top: .6em !important; }
+    main.many .winner-name { font-size: 4.5em; }
+    main.many .crown-big { font-size: 3em; }
     .winner-name { font-family: var(--display); font-size: 6em; text-align: center; line-height: 1; animation: float 2s infinite; }
     .crown-big { font-size: 4em; text-align: center; animation: wobble 1s infinite; }
 

@@ -18,7 +18,7 @@ app.get('/host', (_, res) => res.sendFile(path.join(__dirname, 'public', 'host.h
 
 // ---------- config ----------
 const MIN_PLAYERS = 3;
-const MAX_PLAYERS = 8;
+const MAX_PLAYERS = 10;
 const T = {
   roundIntro: 5000,
   answer: 90000,
@@ -29,7 +29,7 @@ const T = {
   finalVote: 30000,
   finalReveal: 14000,
 };
-const COLORS = ['#ff4d6d', '#ffb703', '#06d6a0', '#4cc9f0', '#b388ff', '#ff8fab', '#f77f00', '#90e0ef'];
+const COLORS = ['#ff4d6d', '#ffb703', '#06d6a0', '#4cc9f0', '#b388ff', '#ff8fab', '#f77f00', '#90e0ef', '#c5f277', '#ffd6a5'];
 const ROOM_LETTERS = 'BCDFGHJKLMNPQRSTVWXZ'; // no vowels → no accidental words
 
 const rooms = new Map();

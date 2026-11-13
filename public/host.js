@@ -137,10 +137,11 @@ function render() {
   const fresh = key !== lastKey;
   if (fresh) { timerTotal = 0; lastKey = key; }
 
-  $('#hdrMid').classList.toggle('hidden', S.phase === 'lobby');
+  $('#hdrMid').classList.toggle('hidden', S.phase === 'lobby' || S.phase === 'end');
   $('#hdrMid').innerHTML = `Join at <b>${esc(info.origin.replace(/^https?:\/\//, ''))}</b> · Room <b>${S.code}</b>${S.audienceCount ? ` · 👀 ${S.audienceCount} audience` : ''}`;
   $('#hdrLogo').style.visibility = S.phase === 'lobby' ? 'hidden' : 'visible';
 
+  main.classList.toggle('many', S.players.length > 6);
   const fn = VIEWS[S.phase];
   if (fn) fn(fresh);
 }
@@ -332,7 +333,7 @@ function boardRows(sorted, showGain = true) {
 
 function renderBoard(title) {
   const sorted = [...S.players].sort((a, b) => b.score - a.score);
-  main.innerHTML = `<div class="huge pop" style="font-size:4.5em;margin-bottom:.6em">${title}</div><div class="board">${boardRows(sorted)}</div>`;
+  main.innerHTML = `<div class="huge pop board-title" style="font-size:4.5em;margin-bottom:.6em">${title}</div><div class="board">${boardRows(sorted)}</div>`;
   growBars();
 }
 function growBars() {
